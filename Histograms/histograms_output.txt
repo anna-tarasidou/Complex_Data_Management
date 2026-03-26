@@ -1,0 +1,7 @@
+Equi-Width Histogram
+Counts per bin (10 bins):
+[445, 132, 1797, 2337, 1748, 1615, 1208, 473, 253, 96]
+
+Equi-Depth Histogram
+Boundaries (10 bins):
+[18, 22, 26, 29, 33, 37, 42, 48, 54, 80]
