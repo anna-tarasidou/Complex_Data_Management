@@ -1,55 +1,95 @@
-def sort_merge_semijoin(r, s):
-    """
-        Υλοποίηση Semijoin με χρήση Ταξινόμησης (Sort-Merge).
-        r: Σχέση αεροδρομίων (airports) - Κλειδί στο index 0
-        s: Σχέση πτήσεων (routes) - Κλειδί στο index 5
-        """
+def sort_merge_semijoin(r, s, r_key_index=0, s_key_index=0):
+    # Sort-Merge
+    # r: airports : index 0
+    # s: routes : index 5
+
     # Sort
-    # Ταξινομούμε και τις δύο λίστες αλφαβητικά/αριθμητικά με βάση το κλειδί τους.
-    sorted_r = sorted([row for row in r if len(row) > 0], key=lambda x: str(x[0]))
-    sorted_s = sorted([row for row in s if len(row) > 5], key=lambda x: str(x[5]))
+    sorted_r = sorted([row for row in r if len(row) > r_key_index], key=lambda x: str(x[r_key_index]))
+    sorted_s = sorted([row for row in s if len(row) > s_key_index], key=lambda x: str(x[s_key_index]))
 
     result = []
-    i = 0  # Δείκτης για την ταξινομημένη r
-    j = 0  # Δείκτης για την ταξινομημένη s
+    i = 0  # pointer for r
+    j = 0  # pointer for s
 
     # Merge
     while i < len(sorted_r) and j < len(sorted_s):
-        r_key = str(sorted_r[i][0])
-        s_key = str(sorted_s[j][5])
+        r_key = str(sorted_r[i][r_key_index])
+        s_key = str(sorted_s[j][s_key_index])
 
         if r_key == s_key:
-            # Βρήκαμε ταίριασμα! Προσθέτουμε τη γραμμή του r στο αποτέλεσμα.
             result.append(sorted_r[i])
-            # Στο semijoin, μόλις βρούμε ΕΣΤΩ ΚΑΙ ΜΙΑ αντιστοιχία,
-            # τελειώσαμε με αυτό το αεροδρόμιο και προχωράμε στο επόμενο.
             i += 1
         elif r_key < s_key:
-            # Το κλειδί του r είναι "μικρότερο" αλφαβητικά, προχωράμε τον δείκτη του r
             i += 1
         else:
-            # Το κλειδί του s είναι "μικρότερο" αλφαβητικά, προχωράμε τον δείκτη του s
             j += 1
 
     return result
 
 
-def hash_semijoin(r, s):
-    """
-        Υλοποίηση Semijoin με χρήση Κατακερματισμού (Hashing).
-        r: Σχέση αεροδρομίων (airports) - Κλειδί στο index 0
-        s: Σχέση πτήσεων (routes) - Κλειδί στο index 5
-        """
-    # 1. Φάση Κατασκευής (Build phase):
-    # Δημιουργούμε ένα Set με όλους τους μοναδικούς κωδικούς προορισμού (index 5) από το s.
-    # Τα Sets στην Python λειτουργούν ως Hash Tables, προσφέροντας ακαριαία αναζήτηση.
-    s_keys = set(str(row[5]) for row in s if len(row) > 5)
+def hash_semijoin(r, s, r_key_index=0, s_key_index=0):
+    # r: airports : index 0
+    # s: routes : index 5
 
-    # 2. Φάση Ανίχνευσης (Probe phase):
-    # Σαρώνουμε το r και κρατάμε μόνο όσες γραμμές έχουν κωδικό (index 0) που υπάρχει στο Set.
+    # Build hash set
+    s_keys = set(str(row[s_key_index]) for row in s if len(row) > s_key_index)
+
     result = []
     for row in r:
-        if len(row) > 0 and str(row[0]) in s_keys:
+        if len(row) > r_key_index and str(row[r_key_index]) in s_keys:
             result.append(row)
 
     return result
+
+
+def hash_antisemijoin(r, s, r_key_index=0, s_key_index=0):
+    s_keys = set(str(row[s_key_index]) for row in s if len(row) > s_key_index)
+
+    result = []
+    for row in r:
+        if len(row) > r_key_index and str(row[r_key_index]) not in s_keys:
+            result.append(row)
+
+    return result
+
+
+def sort_merge_antisemijoin(r, s, r_key_index=0, s_key_index=0):
+    # Sort
+    sorted_r = sorted([row for row in r if len(row) > r_key_index], key=lambda x: str(x[r_key_index]))
+    sorted_s = sorted([row for row in s if len(row) > s_key_index], key=lambda x: str(x[s_key_index]))
+
+    result = []
+    i = 0
+    j = 0
+
+    # Merge
+    while i < len(sorted_r) and j < len(sorted_s):
+        r_key = str(sorted_r[i][r_key_index])
+        s_key = str(sorted_s[j][s_key_index])
+
+        if r_key == s_key:
+            i += 1
+        elif r_key < s_key:
+            result.append(sorted_r[i])
+            i += 1
+        else:
+            j += 1
+
+    while i < len(sorted_r):
+        result.append(sorted_r[i])
+        i += 1
+
+    return result
+
+
+def load_dat_file(filename):
+    data = []
+    try:
+        with open(filename, 'r', encoding='utf-8') as file:
+            for line in file:
+                row = line.strip().split(',')
+                data.append(row)
+        return data
+    except FileNotFoundError:
+        print(f"File '{filename}' not found!")
+        return []
