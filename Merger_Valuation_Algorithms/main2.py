@@ -44,3 +44,19 @@ if airports_data and routes_data:
 
     print(f"\n--- Result ---")
     print(f"Found {len(result_airports)} airports with aircrafts {target_aircraft}.")
+
+r_test = [(1, 'b1'), (2, 'b2'), (3, 'b3'), (4, 'b4')]
+s_test = [(1, 'c1'), (1, 'c2'), (2, 'c3'), (3, 'c4')]
+t_test = [(1, 'd1'), (2, 'd2'), (3, 'd3'), (5, 'd4')]
+
+expected_output = [(1, 'b1', 'c1', 'd1'), (1, 'b1', 'c2', 'd1'), (2, 'b2', 'c3', 'd2'), (3, 'b3', 'c4', 'd3')]
+
+print("--- 1. Έλεγχος Pipelined Merge Join ---")
+pipe_result = pipelined_merge_join(r_test, s_test, t_test)
+print("Αποτέλεσμα:", pipe_result)
+print("Σωστό;", pipe_result == expected_output)
+
+print("\n--- 2. Έλεγχος Three-Way Sort-Merge Join ---")
+three_way_result = three_way_sort_merge_join(r_test, s_test, t_test)
+print("Αποτέλεσμα:", three_way_result)
+print("Σωστό;", three_way_result == expected_output)
