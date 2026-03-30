@@ -20,8 +20,8 @@ if age_list:
     max_a = max(age_list)
     total = len(age_list)
 
-    query_start = 28
-    query_end = 30
+    query_start = 7
+    query_end = 11
 
     print(f"\nExperiment for ages: [{query_start}, {query_end}]")
 

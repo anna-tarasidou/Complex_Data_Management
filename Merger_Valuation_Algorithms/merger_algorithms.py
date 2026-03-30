@@ -42,17 +42,6 @@ def hash_semijoin(r, s, r_key_index=0, s_key_index=0):
     return result
 
 
-def hash_antisemijoin(r, s, r_key_index=0, s_key_index=0):
-    s_keys = set(str(row[s_key_index]) for row in s if len(row) > s_key_index)
-
-    result = []
-    for row in r:
-        if len(row) > r_key_index and str(row[r_key_index]) not in s_keys:
-            result.append(row)
-
-    return result
-
-
 def sort_merge_antisemijoin(r, s, r_key_index=0, s_key_index=0):
     # Sort
     sorted_r = sorted([row for row in r if len(row) > r_key_index], key=lambda x: str(x[r_key_index]))
@@ -78,6 +67,17 @@ def sort_merge_antisemijoin(r, s, r_key_index=0, s_key_index=0):
     while i < len(sorted_r):
         result.append(sorted_r[i])
         i += 1
+
+    return result
+
+
+def hash_antisemijoin(r, s, r_key_index=0, s_key_index=0):
+    s_keys = set(str(row[s_key_index]) for row in s if len(row) > s_key_index)
+
+    result = []
+    for row in r:
+        if len(row) > r_key_index and str(row[r_key_index]) not in s_keys:
+            result.append(row)
 
     return result
 

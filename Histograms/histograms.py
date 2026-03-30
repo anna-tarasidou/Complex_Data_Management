@@ -34,6 +34,7 @@ def build_equi_width_histogram(ages, num_bins=10):
     min_age = min(ages)
     max_age = max(ages)
 
+    # Calculate bin width
     bin_width = (max_age - min_age) / num_bins
 
     histogram = [0] * num_bins

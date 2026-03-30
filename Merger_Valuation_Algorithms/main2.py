@@ -51,12 +51,12 @@ t_test = [(1, 'd1'), (2, 'd2'), (3, 'd3'), (5, 'd4')]
 
 expected_output = [(1, 'b1', 'c1', 'd1'), (1, 'b1', 'c2', 'd1'), (2, 'b2', 'c3', 'd2'), (3, 'b3', 'c4', 'd3')]
 
-print("--- 1. Έλεγχος Pipelined Merge Join ---")
+print("--- Pipelined Merge Join ---")
 pipe_result = pipelined_merge_join(r_test, s_test, t_test)
-print("Αποτέλεσμα:", pipe_result)
-print("Σωστό;", pipe_result == expected_output)
+print("Result:", pipe_result)
+print(pipe_result == expected_output)
 
-print("\n--- 2. Έλεγχος Three-Way Sort-Merge Join ---")
+print("\n--- Three-Way Sort-Merge Join ---")
 three_way_result = three_way_sort_merge_join(r_test, s_test, t_test)
-print("Αποτέλεσμα:", three_way_result)
-print("Σωστό;", three_way_result == expected_output)
+print("Result:", three_way_result)
+print(three_way_result == expected_output)
