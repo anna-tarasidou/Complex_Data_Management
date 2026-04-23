@@ -2,6 +2,13 @@
 # Anna Tarasidou
 
 
+MAX_LEAF_CAP = 51
+MIN_LEAF_CAP = 20
+
+MAX_INT_CAP = 28
+MIN_INT_CAP = 11
+
+
 class Point:
     # 2D spatial point (x,y)
     def __init__(self, x: float, y: float):
@@ -20,6 +27,10 @@ class MBR:
         self.x_high = x_high
         self.y_high = y_high
 
+    def area(self) -> float:
+        # Calculates the area of the rectangle
+        return (self.x_high - self.x_low) * (self.y_high - self.y_low)
+
     def __repr__(self):
         return f"[{self.x_low}, {self.y_low}, {self.x_high}, {self.y_high}]"
 
@@ -30,45 +41,27 @@ class LeafEntry:
         self.record_id = record_id
         self.point = point
 
+    # Functions that return the centre
+    def get_center_x(self): return self.point.x
+    def get_center_y(self): return self.point.y
+
     def __repr__(self):
         return f"({self.record_id}, {self.point})"
 
 
-def load_data(filepath: str) -> list[LeafEntry]:
-    # Reads Data File, Returns list of LeafEntry objects
-    entries = []
+class IntermediateEntry:
+    # Entry to intermediate node
+    def __init__(self, node_id: int, mbr: MBR):
+        self.node_id = node_id
+        self.mbr = mbr
 
-    with open(filepath, 'r', encoding='utf-8') as file:
-        first_line = file.readline().strip()
-        if not first_line:
-            return entries
+    # Functions that return the centre
+    def get_center_x(self): return (self.mbr.x_low + self.mbr.x_high) / 2.0
+    def get_center_y(self): return (self.mbr.y_low + self.mbr.y_high) / 2.0
 
-        total_points = int(first_line)
-        print(f"Total points: {total_points}")
-
-        # Read the coordinates line by line
-        record_id = 1
-        for line in file:
-            parts = line.strip().split()
-            if len(parts) == 2:
-                x = float(parts[0])
-                y = float(parts[1])
-                point = Point(x, y)
-
-                # Create a LeafEntry <record-id, point>
-                entry = LeafEntry(record_id, point)
-                entries.append(entry)
-
-                record_id += 1
-
-    return entries
-
-
-MAX_LEAF_CAP = 51
-MIN_LEAF_CAP = 20
-
-MAX_INT_CAP = 28
-MIN_INT_CAP = 11
+    def __repr__(self):
+        # Format: (ptr, geo) -> (node_id, [x_low, y_low, x_high, y_high])
+        return f"({self.node_id},{self.mbr})"
 
 
 class Node:
@@ -82,6 +75,22 @@ class Node:
 
     def add_entry(self, entry):
         self.entries.append(entry)
+
+    def calculate_mbr(self):
+        # Calculates the MBR for all entries in the node
+        if not self.entries:
+            return
+
+        if self.is_leaf:
+            xs = [e.point.x for e in self.entries]
+            ys = [e.point.y for e in self.entries]
+            self.mbr = MBR(min(xs), min(ys), max(xs), max(ys))
+        else:
+            xs_low = [e.mbr.x_low for e in self.entries]
+            ys_low = [e.mbr.y_low for e in self.entries]
+            xs_high = [e.mbr.x_high for e in self.entries]
+            ys_high = [e.mbr.y_high for e in self.entries]
+            self.mbr = MBR(min(xs_low), min(ys_low), max(xs_high), max(ys_high))
 
     def __repr__(self):
         return f"Node(id={self.node_id}, level={self.level}, is_leaf={self.is_leaf}, entries={len(self.entries)})"
@@ -113,3 +122,33 @@ def split_into_nodes(entries: list, max_cap: int, min_cap: int) -> list[list]:
             blocks[-1] = borrow + last_block
 
     return blocks
+
+
+def load_data(filepath: str) -> list[LeafEntry]:
+    # Reads Data File, Returns list of LeafEntry objects
+    entries = []
+
+    with open(filepath, 'r', encoding='utf-8') as file:
+        first_line = file.readline().strip()
+        if not first_line:
+            return entries
+
+        total_points = int(first_line)
+        print(f"Total points: {total_points}")
+
+        # Read the coordinates line by line
+        record_id = 1
+        for line in file:
+            parts = line.strip().split()
+            if len(parts) == 2:
+                x = float(parts[0])
+                y = float(parts[1])
+                point = Point(x, y)
+
+                # Create a LeafEntry <record-id, point>
+                entry = LeafEntry(record_id, point)
+                entries.append(entry)
+
+                record_id += 1
+
+    return entries
