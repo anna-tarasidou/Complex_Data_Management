@@ -5,8 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e275ef2e-a1a0-416b-88c5-5d52bf9142fd" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/SpatialDataIndex/NNQueries.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpatialDataIndex/distanceRangeQueries.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpatialDataIndex/main1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpatialDataIndex/main2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpatialDataIndex/rtree.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpatialDataIndex/spatial_queries.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpatialDataIndex/windowRangeQueries.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpatialDataIndex/part1/r_tree.py" beforeDir="false" afterPath="$PROJECT_DIR$/SpatialDataIndex/part1/r_tree.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpatialDataIndex/part1/Beijing_restaurants.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SpatialDataIndex/Beijing_restaurants.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpatialDataIndex/part1/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpatialDataIndex/part1/r_tree.py" beforeDir="false" afterPath="$PROJECT_DIR$/SpatialDataIndex/r_tree.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,13 +60,13 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;promo.typescript&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Αννα Ταρασίδου\PycharmProjects\diaxeirish_synth_ded\SpatialDataIndex\part1" />
       <recent name="C:\Users\Αννα Ταρασίδου\PycharmProjects\diaxeirish_synth_ded\SpatialDataIndex" />
+      <recent name="C:\Users\Αννα Ταρασίδου\PycharmProjects\diaxeirish_synth_ded\SpatialDataIndex\part1" />
       <recent name="C:\Users\Αννα Ταρασίδου\PycharmProjects\diaxeirish_synth_ded" />
     </key>
   </component>

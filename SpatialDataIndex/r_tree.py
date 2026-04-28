@@ -1,6 +1,6 @@
 # A.M.: 5361
 # Anna Tarasidou
-
+import math
 
 MAX_LEAF_CAP = 51
 MIN_LEAF_CAP = 20
@@ -46,7 +46,7 @@ class LeafEntry:
     def get_center_y(self): return self.point.y
 
     def __repr__(self):
-        return f"({self.record_id}, {self.point})"
+        return f"({self.record_id},({self.point.x}, {self.point.y}))"
 
 
 class IntermediateEntry:
@@ -93,7 +93,9 @@ class Node:
             self.mbr = MBR(min(xs_low), min(ys_low), max(xs_high), max(ys_high))
 
     def __repr__(self):
-        return f"Node(id={self.node_id}, level={self.level}, is_leaf={self.is_leaf}, entries={len(self.entries)})"
+        f_flag = 0 if self.is_leaf else 1
+        entries_str = " , ".join(str(e) for e in self.entries)
+        return f"{self.node_id} , {len(self.entries)} , {f_flag} , {entries_str}"
 
 
 def split_into_nodes(entries: list, max_cap: int, min_cap: int) -> list[list]:
@@ -152,3 +154,102 @@ def load_data(filepath: str) -> list[LeafEntry]:
                 record_id += 1
 
     return entries
+
+
+class RTree:
+    # Represents the STR R-Tree
+    def __init__(self):
+        self.nodes = []
+
+    @staticmethod
+    def str_sort(entries, max_cap):
+        # Sort-Tile-Recursive algorithm
+        if not entries:
+            return []
+
+        num_entries = len(entries)
+        # P = total number of nodes needed
+        P = math.ceil(num_entries / max_cap)
+
+        # S = number of vertical slices (tiles)
+        S = math.ceil(math.sqrt(P))
+        tile_size = S * max_cap
+
+        # Sort by X coordinate
+        entries.sort(key=lambda e: e.get_center_x())
+
+        str_sorted_entries = []
+        # Split into tiles and sort by Y
+        for i in range(0, num_entries, tile_size):
+            tile = entries[i: i + tile_size]
+            tile.sort(key=lambda e: e.get_center_y())
+            str_sorted_entries.extend(tile)
+
+        return str_sorted_entries
+
+    def build_tree(self, leaf_entries):
+        # Build tree from the bottom up
+        current_level_entries = leaf_entries
+        level = 0
+
+        while True:
+            # Define capacities based on current level
+            max_cap = MAX_LEAF_CAP if level == 0 else MAX_INT_CAP
+            min_cap = MIN_LEAF_CAP if level == 0 else MIN_INT_CAP
+
+            if level == 0:
+                # Level 0 (Leaves): Apply STR sorting to points
+                sorted_entries = self.str_sort(current_level_entries, max_cap)
+            else:
+                # Level 1+ (Intermediate): No sorting. Use bulk loading order
+                sorted_entries = current_level_entries
+
+            # Split sorted entries into node blocks
+            blocks = split_into_nodes(sorted_entries, max_cap, min_cap)
+
+            next_level_entries = []
+
+            for block in blocks:
+                node_id = len(self.nodes)  # Node id is its position in the array
+                is_leaf = (level == 0)
+
+                # Create the node and populate it
+                node = Node(node_id, level, is_leaf)
+                node.entries = block
+                node.calculate_mbr()
+
+                self.nodes.append(node)
+
+                # Create an IntermediateEntry for the parent level
+                next_level_entries.append(IntermediateEntry(node_id, node.mbr))
+
+            # Stop when we have constructed the root (only 1 block at this level)
+            if len(blocks) == 1:
+                break
+
+            # Move to the next level
+            current_level_entries = next_level_entries
+            level += 1
+
+    def print_statistics(self):
+        if not self.nodes:
+            return
+
+        root_level = self.nodes[-1].level
+
+        for lvl in range(root_level + 1):
+            nodes_in_level = [n for n in self.nodes if n.level == lvl]
+            count = len(nodes_in_level)
+
+            if lvl == 0:
+                avg_area = 0.0  # Leaves store points, so area is 0
+            else:
+                total_area = sum(n.mbr.area() for n in nodes_in_level)
+                avg_area = total_area / count if count > 0 else 0.0
+
+            print(f"{count} nodes at level {lvl} with average MBR area {avg_area}")
+
+    def export_csv(self, filename="rtree.csv"):
+        with open(filename, 'w', encoding='utf-8') as f:
+            for node in self.nodes:
+                f.write(f"{node}\n")
