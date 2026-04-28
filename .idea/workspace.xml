@@ -5,17 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e275ef2e-a1a0-416b-88c5-5d52bf9142fd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/SpatialDataIndex/NNQueries.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpatialDataIndex/distanceRangeQueries.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpatialDataIndex/main1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpatialDataIndex/main2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpatialDataIndex/rtree.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpatialDataIndex/spatial_queries.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpatialDataIndex/windowRangeQueries.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpatialDataIndex/main3.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpatialDataIndex/main4.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpatialDataIndex/part1/Beijing_restaurants.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SpatialDataIndex/Beijing_restaurants.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpatialDataIndex/part1/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpatialDataIndex/part1/r_tree.py" beforeDir="false" afterPath="$PROJECT_DIR$/SpatialDataIndex/r_tree.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpatialDataIndex/spatial_queries.py" beforeDir="false" afterPath="$PROJECT_DIR$/SpatialDataIndex/spatial_queries.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
