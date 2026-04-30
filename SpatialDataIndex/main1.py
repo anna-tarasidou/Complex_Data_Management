@@ -2,7 +2,6 @@
 # Anna Tarasidou
 
 import sys
-from r_tree import *
 from spatial_queries import *
 
 
@@ -28,5 +27,4 @@ def main1():
     print(f"Export complete: {output_file}")
 
 
-main()
-
+main1()

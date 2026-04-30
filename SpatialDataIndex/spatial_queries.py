@@ -1,9 +1,8 @@
 # A.M.: 5361
 # Anna Tarasidou
 import heapq
-import math
 
-from r_tree import Point, MBR, Node, RTree
+from r_tree import *
 
 
 def is_point_inside_mbr(point: Point, mbr: MBR) -> bool:
@@ -18,7 +17,6 @@ def do_mbrs_intersect(mbr1: MBR, mbr2: MBR) -> bool:
 
 
 def window_range_query(tree: RTree, query_mbr: MBR) -> list:
-
     results = []
 
     if not tree.nodes:
@@ -27,15 +25,14 @@ def window_range_query(tree: RTree, query_mbr: MBR) -> list:
     # The root is always the last node added to our bottom-up array
     root_node = tree.nodes[-1]
 
-    # Start the recursive top-down traversal
+    # Start the recursive top-down
     _range_query_recursive(tree, root_node, query_mbr, results)
 
     return results
 
 
 def _range_query_recursive(tree: RTree, node: Node, query_mbr: MBR, results: list):
-
-    # Base Case: If the current node is a leaf (Level 0)
+    # If the current node is a leaf (Level 0)
     if node.is_leaf:
         for entry in node.entries:
             # Check if the actual restaurant point falls inside the query window
@@ -75,7 +72,7 @@ def distance_range_query(tree: RTree, center: Point, radius: float) -> list:
     if not tree.nodes:
         return results
 
-    # The root is always the last node added to the tree
+    # The root is the last node added to the tree
     root_node = tree.nodes[-1]
     _distance_query_recursive(tree, root_node, center, radius, results)
 
@@ -83,8 +80,7 @@ def distance_range_query(tree: RTree, center: Point, radius: float) -> list:
 
 
 def _distance_query_recursive(tree: RTree, node: Node, center: Point, radius: float, results: list):
-
-    # Base Case: If the current node is a leaf (Level 0)
+    # If the current node is a leaf (Level 0)
     if node.is_leaf:
         for entry in node.entries:
             # Check if the actual point is within the search circle
@@ -107,9 +103,8 @@ def knn_query(tree: RTree, query_point: Point, k: int) -> list:
     if not tree.nodes or k <= 0:
         return results
 
-    # Priority queue. Elements will be tuples:
-    # (distance, priority_type, id_tie_breaker, item)
-    # priority_type: 0 for points, 1 for nodes (ensures points are popped first on a tie)
+    # Priority queue. Elements will be tuples (distance, priority_type, id_tie_breaker, item)
+    # priority_type: 0 for points, 1 for nodes
     pq = []
 
     # Push the root node into the priority queue (distance 0 to force it to pop first)
@@ -120,15 +115,15 @@ def knn_query(tree: RTree, query_point: Point, k: int) -> list:
         dist, priority_type, _, item = heapq.heappop(pq)
 
         if priority_type == 0:
-            # It's a LeafEntry (data point). We found our next nearest neighbor!
+            # LeafEntry (data point)
             results.append(item)
 
-            # Stop if we have collected exactly 'k' neighbors
+            # Stop if we have exactly 'k' neighbors
             if len(results) == k:
                 break
 
         else:
-            # It's a Node. We must explore its entries.
+            # Node
             if item.is_leaf:
                 for entry in item.entries:
                     d = euclidean_distance(query_point, entry.point)

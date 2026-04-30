@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e275ef2e-a1a0-416b-88c5-5d52bf9142fd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/SpatialDataIndex/main3.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpatialDataIndex/main4.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpatialDataIndex/main1.py" beforeDir="false" afterPath="$PROJECT_DIR$/SpatialDataIndex/main1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpatialDataIndex/main2.py" beforeDir="false" afterPath="$PROJECT_DIR$/SpatialDataIndex/main2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpatialDataIndex/main3.py" beforeDir="false" afterPath="$PROJECT_DIR$/SpatialDataIndex/main3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpatialDataIndex/main4.py" beforeDir="false" afterPath="$PROJECT_DIR$/SpatialDataIndex/main4.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SpatialDataIndex/spatial_queries.py" beforeDir="false" afterPath="$PROJECT_DIR$/SpatialDataIndex/spatial_queries.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,20 +44,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Python.histograms.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main2.executor&quot;: &quot;Run&quot;,
-    &quot;Python.selection_merger_algorithms.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;promo.typescript&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Python.histograms.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.main1.executor": "Run",
+    "Python.main2.executor": "Run",
+    "Python.selection_merger_algorithms.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "settings.editor.selected.configurable": "promo.typescript"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Αννα Ταρασίδου\PycharmProjects\diaxeirish_synth_ded\SpatialDataIndex" />
