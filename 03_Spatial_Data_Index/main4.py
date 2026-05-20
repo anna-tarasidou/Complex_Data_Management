@@ -1,7 +1,6 @@
 # A.M.: 5361
 # Anna Tarasidou
 import sys
-from r_tree import *
 from spatial_queries import *
 
 

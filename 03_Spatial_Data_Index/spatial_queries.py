@@ -1,7 +1,6 @@
 # A.M.: 5361
 # Anna Tarasidou
 import heapq
-
 from r_tree import *
 
 
