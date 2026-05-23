@@ -5,40 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e275ef2e-a1a0-416b-88c5-5d52bf9142fd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/04_Similarity_Search/data10K10.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04_Similarity_Search/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04_Similarity_Search/queries10.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04_Similarity_Search/range_queries.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04_Similarity_Search/similarity_search.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Histograms/.idea/diaxeirish_synth_ded.iml" beforeDir="false" afterPath="$PROJECT_DIR$/01_Histograms/.idea/diaxeirish_synth_ded.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Histograms/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/01_Histograms/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Histograms/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/01_Histograms/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Histograms/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/01_Histograms/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Histograms/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/01_Histograms/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Histograms/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/01_Histograms/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Histograms/final_general.col" beforeDir="false" afterPath="$PROJECT_DIR$/01_Histograms/final_general.col" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Histograms/final_general.dat" beforeDir="false" afterPath="$PROJECT_DIR$/01_Histograms/final_general.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Histograms/histograms.py" beforeDir="false" afterPath="$PROJECT_DIR$/01_Histograms/histograms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Histograms/histograms_output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/01_Histograms/histograms_output.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Histograms/histograms_plot.png" beforeDir="false" afterPath="$PROJECT_DIR$/01_Histograms/histograms_plot.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Histograms/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/01_Histograms/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Merger_Valuation_Algorithms/airports.dat" beforeDir="false" afterPath="$PROJECT_DIR$/02_Merger_Valuation_Algorithms/airports.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Merger_Valuation_Algorithms/main2.py" beforeDir="false" afterPath="$PROJECT_DIR$/02_Merger_Valuation_Algorithms/main2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Merger_Valuation_Algorithms/merger_algorithms.py" beforeDir="false" afterPath="$PROJECT_DIR$/02_Merger_Valuation_Algorithms/merger_algorithms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Merger_Valuation_Algorithms/routes.dat" beforeDir="false" afterPath="$PROJECT_DIR$/02_Merger_Valuation_Algorithms/routes.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Merger_Valuation_Algorithms/selection_merger_algorithms.py" beforeDir="false" afterPath="$PROJECT_DIR$/02_Merger_Valuation_Algorithms/selection_merger_algorithms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpatialDataIndex/Beijing_restaurants.txt" beforeDir="false" afterPath="$PROJECT_DIR$/03_Spatial_Data_Index/Beijing_restaurants.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpatialDataIndex/NNQueries.txt" beforeDir="false" afterPath="$PROJECT_DIR$/03_Spatial_Data_Index/NNQueries.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpatialDataIndex/distanceRangeQueries.txt" beforeDir="false" afterPath="$PROJECT_DIR$/03_Spatial_Data_Index/distanceRangeQueries.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpatialDataIndex/main1.py" beforeDir="false" afterPath="$PROJECT_DIR$/03_Spatial_Data_Index/main1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpatialDataIndex/main2.py" beforeDir="false" afterPath="$PROJECT_DIR$/03_Spatial_Data_Index/main2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpatialDataIndex/main3.py" beforeDir="false" afterPath="$PROJECT_DIR$/03_Spatial_Data_Index/main3.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpatialDataIndex/main4.py" beforeDir="false" afterPath="$PROJECT_DIR$/03_Spatial_Data_Index/main4.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpatialDataIndex/r_tree.py" beforeDir="false" afterPath="$PROJECT_DIR$/03_Spatial_Data_Index/r_tree.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpatialDataIndex/rtree.csv" beforeDir="false" afterPath="$PROJECT_DIR$/03_Spatial_Data_Index/rtree.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpatialDataIndex/spatial_queries.py" beforeDir="false" afterPath="$PROJECT_DIR$/03_Spatial_Data_Index/spatial_queries.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpatialDataIndex/windowRangeQueries.txt" beforeDir="false" afterPath="$PROJECT_DIR$/03_Spatial_Data_Index/windowRangeQueries.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +26,7 @@
     <setting file="file://$PROJECT_DIR$/main.py" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
