@@ -63,6 +63,7 @@ def range_query_idistance(q, epsilon, D, pivots, idistance_array, idist_keys, ma
         lower_bound = i * maxd + dist_q_to_pivots[i] - epsilon
         upper_bound = i * maxd + dist_q_to_pivots[i] + epsilon
 
+        # Binary search
         start_idx = bisect.bisect_left(idist_keys, lower_bound)
 
         for j in range(start_idx, len(idistance_array)):
