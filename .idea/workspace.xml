@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e275ef2e-a1a0-416b-88c5-5d52bf9142fd" name="Changes" comment="">
+    <list default="true" id="e275ef2e-a1a0-416b-88c5-5d52bf9142fd" name="Changes" comment="Updated">
       <change afterPath="$PROJECT_DIR$/04_Similarity_Search/knn_queries.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04_Similarity_Search/main1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04_Similarity_Search/main2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04_Similarity_Search/main3.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/04_Similarity_Search/main4.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04_Similarity_Search/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04_Similarity_Search/range_queries.py" beforeDir="false" afterPath="$PROJECT_DIR$/04_Similarity_Search/range_queries.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,24 +41,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Python.histograms.executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.main1.executor": "Run",
-    "Python.main2.executor": "Run",
-    "Python.main3.executor": "Run",
-    "Python.main4.executor": "Run",
-    "Python.selection_merger_algorithms.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/Αννα Ταρασίδου/PycharmProjects/diaxeirish_synth_ded/04_Similarity_Search",
-    "settings.editor.selected.configurable": "promo.typescript"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Python.histograms.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main3.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main4.executor&quot;: &quot;Run&quot;,
+    &quot;Python.selection_merger_algorithms.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Αννα Ταρασίδου/PycharmProjects/diaxeirish_synth_ded/04_Similarity_Search&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;promo.typescript&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Αννα Ταρασίδου\PycharmProjects\diaxeirish_synth_ded\04_Similarity_Search" />
@@ -90,6 +85,15 @@
       <option name="presentableId" value="Default" />
       <updated>1774378416509</updated>
     </task>
+    <task id="LOCAL-00001" summary="Updated">
+      <option name="closed" value="true" />
+      <created>1779571901536</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1779571901536</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -118,5 +122,7 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/Histograms" />
     </ignored-roots>
+    <MESSAGE value="Updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated" />
   </component>
 </project>
