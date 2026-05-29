@@ -17,21 +17,21 @@ def main3(data_file, query_file, num_pivots, epsilon):
 
     total_comps_naive, total_comps_pivot, total_comps_idist = 0, 0, 0
 
-    # 1. Naive
+    # Naive
     start_time = time.time()
     for q in queries:
         _, comps = range_query_naive(q, epsilon, D, euclidean_distance)
         total_comps_naive += comps
     time_naive = time.time() - start_time
 
-    # 2. Pivot-based
+    # Pivot-based
     start_time = time.time()
     for q in queries:
         _, comps = range_query_pivot(q, epsilon, D, pivots, distances_2d, euclidean_distance)
         total_comps_pivot += comps
     time_pivot = time.time() - start_time
 
-    # 3. iDistance
+    # iDistance
     start_time = time.time()
     for q in queries:
         _, comps = range_query_idistance(q, epsilon, D, pivots, idistance_array, idist_keys, maxd, euclidean_distance)

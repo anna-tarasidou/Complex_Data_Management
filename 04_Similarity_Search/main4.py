@@ -35,7 +35,7 @@ def main4(data_file, queries_file, num_pivots, k):
         total_comps_pivot += comps
     time_pivot = time.time() - start_time
 
-    # 3. iDistance k-NN
+    # iDistance k-NN
     start_time = time.time()
     for q in queries:
         _, comps = knn_query_idistance(q, k, D, pivots, idistance_array, idist_keys, maxd_p, maxd, euclidean_distance)
