@@ -1,3 +1,5 @@
+# A.M.: 5361
+# Anna Tarasidou
 import time
 import matplotlib.pyplot as plt
 from similarity_search import *
